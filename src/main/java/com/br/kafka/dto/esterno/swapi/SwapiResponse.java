@@ -1,4 +1,4 @@
-package com.br.kafka.dto.swapi;
+package com.br.kafka.dto.esterno.swapi;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

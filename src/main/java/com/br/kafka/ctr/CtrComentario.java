@@ -1,7 +1,7 @@
 package com.br.kafka.ctr;
 
-import com.br.kafka.dto.quote.QuoteResponse;
-import com.br.kafka.services.external.QuoteService;
+import com.br.kafka.dto.comentario.ComentarioDTO;
+import com.br.kafka.services.ServicoComentario;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("quote")
+@RequestMapping("comentario")
 @RequiredArgsConstructor
-public class QuoteCtr {
-    private final QuoteService service;
+public class CtrComentario {
+    private final ServicoComentario service;
 
     @GetMapping("{id}")
-    public ResponseEntity<QuoteResponse> getQuote(@PathVariable int id) {
-        return ResponseEntity.ok(service.getQuote(id));
+    public ResponseEntity<ComentarioDTO> getQuote(@PathVariable int id) {
+        return ResponseEntity.ok(service.recuperarComentario(id));
     }
 }

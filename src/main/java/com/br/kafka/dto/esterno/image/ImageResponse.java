@@ -1,4 +1,4 @@
-package com.br.kafka.dto.image;
+package com.br.kafka.dto.esterno.image;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

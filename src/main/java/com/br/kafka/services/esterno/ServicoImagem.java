@@ -1,6 +1,6 @@
-package com.br.kafka.services.external;
+package com.br.kafka.services.esterno;
 
-import com.br.kafka.dto.image.ImageResponse;
+import com.br.kafka.dto.esterno.image.ImageResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,15 +14,15 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class ImageService {
+public class ServicoImagem {
     private final RestTemplate restTemplate;
     @Value("${image.url}")
     private String url;
 
-    public ImageResponse getImageUrl(String name) {
-        log.debug("Searching image of character Name: {}", name);
+    public ImageResponse recuperarImagemUrl(String nome) {
+        log.debug("Recuperando a imagem do personagem: {}", nome);
         var imageResponses = restTemplate.exchange(
-                url + name,
+                url + nome,
                 HttpMethod.GET,
                 null,
                 new ParameterizedTypeReference<List<ImageResponse>>() {
@@ -30,7 +30,7 @@ public class ImageService {
         ).getBody();
         if (imageResponses != null) {
             var imageResponse = imageResponses.stream().findFirst().orElse(null);
-            log.debug("Data of image: {}", imageResponse);
+            log.debug("Dados da imagem: {}", imageResponse);
             return imageResponse;
         }
         return null;
