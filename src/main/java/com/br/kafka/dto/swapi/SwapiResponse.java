@@ -1,0 +1,15 @@
+package com.br.kafka.dto.swapi;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public record SwapiResponse(
+        String name,
+        String height,
+        String mass,
+        @JsonProperty("hair_color")
+        String hairColor,
+        @JsonProperty("birth_year")
+        String birthYear,
+        String gender
+) {
+}
