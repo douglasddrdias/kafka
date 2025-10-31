@@ -1,6 +1,8 @@
 package com.br.kafka.services.esterno;
 
 import com.br.kafka.dto.esterno.swapi.SwapiResponse;
+import com.br.kafka.dto.swapi.PersonagemDTO;
+import com.br.kafka.services.ServicoTraducaoSwApi;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,14 +16,15 @@ public class ServicoSwapi {
     private final RestTemplate restTemplate;
     @Value("${swapi.url}")
     private String url;
+    private final ServicoTraducaoSwApi servicoTraducao;
 
-    public SwapiResponse recuperarPersonagem(int id) {
+    public PersonagemDTO recuperarPersonagem(int id) {
         log.debug("Recuperando dados do personagem id: {}", id);
         var swapiData = restTemplate.getForObject(
                 url + id,
                 SwapiResponse.class
         );
         log.debug("Dados do personagem: {}", swapiData);
-        return swapiData;
+        return servicoTraducao.traduzir(swapiData);
     }
 }
