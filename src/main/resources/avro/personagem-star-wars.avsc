@@ -1,56 +1,50 @@
 {
   "type": "record",
-  "name": "StarWarsCharacter",
-  "namespace": "com.example.demo.avro",
+  "name": "PersonagemStarWars",
+  "namespace": "com.br.kafka.dto.avro.personagem",
   "fields": [
     {
-      "name": "name",
+      "name": "id",
+      "type": "int"
+    },
+    {
+      "name": "nome",
       "type": "string"
     },
     {
-      "name": "height",
+      "name": "altura",
       "type": ["null", "string"],
       "default": null
     },
     {
-      "name": "mass",
+      "name": "peso",
       "type": ["null", "string"],
       "default": null
     },
     {
-      "name": "hairColor",
+      "name": "corCabelo",
       "type": ["null", "string"],
       "default": null
     },
     {
-      "name": "birthYear",
+      "name": "anoNascimento",
       "type": ["null", "string"],
       "default": null
     },
     {
-      "name": "gender",
+      "name": "genero",
       "type": ["null", "string"],
       "default": null
     },
     {
-      "name": "imageUrl",
+      "name": "urlImagem",
       "type": ["null", "string"],
       "default": null
     },
     {
-      "name": "quote",
+      "name": "comentario",
       "type": ["null", "string"],
       "default": null
-    },
-    {
-      "name": "quoteAuthor",
-      "type": ["null", "string"],
-      "default": null
-    },
-    {
-      "name": "timestamp",
-      "type": "long",
-      "logicalType": "timestamp-millis"
     }
   ]
 }

@@ -25,4 +25,13 @@ image:
   url: https://starwars-databank-server.vercel.app/api/v1/characters/name/
 logging:
   level:
-    com.br.kafka.services.external: DEBUG
+    com:
+      br:
+        kafka:
+          services:
+            esterno: DEBUG
+            kafka:
+              consumidor:
+                ServicoConsumidorPersonagemStarWars: DEBUG
+
+
