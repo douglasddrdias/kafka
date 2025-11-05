@@ -134,6 +134,7 @@ public class ServicoTraducaoSwApi {
             b.genero(traducaoGenero(dados.gender()));
             b.corPele(traduzir(TRADUCAO_PELE, dados.skinColor(), PELE));
             b.corOlhos(traduzir(TRADUCAO_OLHOS, dados.eyeColor(), OLHO));
+            b.url(dados.url());
             return b.build();
         }
         return null;

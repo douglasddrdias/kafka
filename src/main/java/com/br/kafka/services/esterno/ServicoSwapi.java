@@ -1,5 +1,6 @@
 package com.br.kafka.services.esterno;
 
+import com.br.kafka.dto.esterno.swapi.PaginaSwapiResponse;
 import com.br.kafka.dto.esterno.swapi.SwapiResponse;
 import com.br.kafka.dto.swapi.PersonagemDTO;
 import com.br.kafka.services.ServicoTraducaoSwApi;
@@ -26,5 +27,10 @@ public class ServicoSwapi {
         );
         log.debug("Dados do personagem: {}", swapiData);
         return servicoTraducao.traduzir(swapiData);
+    }
+
+    public PaginaSwapiResponse recuperarPersonagensPaginados(String urlCompleta) {
+        urlCompleta = urlCompleta == null ? url : urlCompleta;
+        return restTemplate.getForObject(urlCompleta, PaginaSwapiResponse.class);
     }
 }

@@ -15,9 +15,12 @@ import org.springframework.kafka.core.ProducerFactory;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.br.kafka.ConstantesKafka.SCHEMA_REGISTRY_URL;
+import static com.br.kafka.ConstantesKafka.SPECIFIC_AVRO_READER;
+
 @Configuration
 @Slf4j
-public class ConfigProdutorKafka {
+public class ConfigProdutorPersonagemSW {
     @Value("${spring.kafka.bootstrap-servers}")
     private String bootstrapServers;
 
@@ -30,8 +33,8 @@ public class ConfigProdutorKafka {
         configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, IntegerSerializer.class);
         configProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, KafkaAvroSerializer.class);
-        configProps.put("schema.registry.url", schemaRegistryUrl);
-        configProps.put("auto.register.schemas", true);
+        configProps.put(SCHEMA_REGISTRY_URL, schemaRegistryUrl);
+        configProps.put(SPECIFIC_AVRO_READER, true);
         return new DefaultKafkaProducerFactory<>(configProps);
     }
 

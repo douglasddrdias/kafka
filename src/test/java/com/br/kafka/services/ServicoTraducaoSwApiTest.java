@@ -41,7 +41,7 @@ class ServicoTraducaoSwApiTest {
 
     @Test
     void deveRetornarNaoSemCorrespondenciaQuandoCorNaoExistir() {
-        var personagem = new SwapiResponse("Teste", "100", "50", "unknownColor", "weirdTone", "crazyEye", "0BBY", "other");
+        var personagem = new SwapiResponse("Teste", "100", "50", "unknownColor", "weirdTone", "crazyEye", "0BBY", "other", null);
         var dto = servico.traduzir(personagem);
         assertEquals(ServicoTraducaoSwApi.SEM_CORRESPONDENCIA, dto.corCabelo());
         assertEquals(ServicoTraducaoSwApi.SEM_CORRESPONDENCIA, dto.corPele());

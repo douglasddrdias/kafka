@@ -14,6 +14,7 @@ public record SwapiResponse(
         String eyeColor,
         @JsonProperty("birth_year")
         String birthYear,
-        String gender
+        String gender,
+        String url
 ) {
 }

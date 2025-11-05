@@ -14,10 +14,10 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 4859775223832190618L;
+  private static final long serialVersionUID = 2769955429591440235L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"PersonagemStarWars\",\"namespace\":\"com.br.kafka.dto.avro.personagem\",\"fields\":[{\"name\":\"id\",\"type\":\"int\"},{\"name\":\"nome\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"altura\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"peso\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"corCabelo\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"anoNascimento\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"genero\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"urlImagem\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"comentario\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"PersonagemStarWars\",\"namespace\":\"com.br.kafka.dto.avro.personagem\",\"fields\":[{\"name\":\"id\",\"type\":\"int\"},{\"name\":\"nome\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"altura\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"peso\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"corCabelo\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"corPele\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"corOlhos\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"anoNascimento\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"genero\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"urlImagem\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"comentario\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -78,6 +78,8 @@ public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordB
   private java.lang.String altura;
   private java.lang.String peso;
   private java.lang.String corCabelo;
+  private java.lang.String corPele;
+  private java.lang.String corOlhos;
   private java.lang.String anoNascimento;
   private java.lang.String genero;
   private java.lang.String urlImagem;
@@ -97,17 +99,21 @@ public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordB
    * @param altura The new value for altura
    * @param peso The new value for peso
    * @param corCabelo The new value for corCabelo
+   * @param corPele The new value for corPele
+   * @param corOlhos The new value for corOlhos
    * @param anoNascimento The new value for anoNascimento
    * @param genero The new value for genero
    * @param urlImagem The new value for urlImagem
    * @param comentario The new value for comentario
    */
-  public PersonagemStarWars(java.lang.Integer id, java.lang.String nome, java.lang.String altura, java.lang.String peso, java.lang.String corCabelo, java.lang.String anoNascimento, java.lang.String genero, java.lang.String urlImagem, java.lang.String comentario) {
+  public PersonagemStarWars(java.lang.Integer id, java.lang.String nome, java.lang.String altura, java.lang.String peso, java.lang.String corCabelo, java.lang.String corPele, java.lang.String corOlhos, java.lang.String anoNascimento, java.lang.String genero, java.lang.String urlImagem, java.lang.String comentario) {
     this.id = id;
     this.nome = nome;
     this.altura = altura;
     this.peso = peso;
     this.corCabelo = corCabelo;
+    this.corPele = corPele;
+    this.corOlhos = corOlhos;
     this.anoNascimento = anoNascimento;
     this.genero = genero;
     this.urlImagem = urlImagem;
@@ -129,10 +135,12 @@ public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordB
     case 2: return altura;
     case 3: return peso;
     case 4: return corCabelo;
-    case 5: return anoNascimento;
-    case 6: return genero;
-    case 7: return urlImagem;
-    case 8: return comentario;
+    case 5: return corPele;
+    case 6: return corOlhos;
+    case 7: return anoNascimento;
+    case 8: return genero;
+    case 9: return urlImagem;
+    case 10: return comentario;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -147,10 +155,12 @@ public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordB
     case 2: altura = value$ != null ? value$.toString() : null; break;
     case 3: peso = value$ != null ? value$.toString() : null; break;
     case 4: corCabelo = value$ != null ? value$.toString() : null; break;
-    case 5: anoNascimento = value$ != null ? value$.toString() : null; break;
-    case 6: genero = value$ != null ? value$.toString() : null; break;
-    case 7: urlImagem = value$ != null ? value$.toString() : null; break;
-    case 8: comentario = value$ != null ? value$.toString() : null; break;
+    case 5: corPele = value$ != null ? value$.toString() : null; break;
+    case 6: corOlhos = value$ != null ? value$.toString() : null; break;
+    case 7: anoNascimento = value$ != null ? value$.toString() : null; break;
+    case 8: genero = value$ != null ? value$.toString() : null; break;
+    case 9: urlImagem = value$ != null ? value$.toString() : null; break;
+    case 10: comentario = value$ != null ? value$.toString() : null; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -238,6 +248,40 @@ public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordB
    */
   public void setCorCabelo(java.lang.String value) {
     this.corCabelo = value;
+  }
+
+  /**
+   * Gets the value of the 'corPele' field.
+   * @return The value of the 'corPele' field.
+   */
+  public java.lang.String getCorPele() {
+    return corPele;
+  }
+
+
+  /**
+   * Sets the value of the 'corPele' field.
+   * @param value the value to set.
+   */
+  public void setCorPele(java.lang.String value) {
+    this.corPele = value;
+  }
+
+  /**
+   * Gets the value of the 'corOlhos' field.
+   * @return The value of the 'corOlhos' field.
+   */
+  public java.lang.String getCorOlhos() {
+    return corOlhos;
+  }
+
+
+  /**
+   * Sets the value of the 'corOlhos' field.
+   * @param value the value to set.
+   */
+  public void setCorOlhos(java.lang.String value) {
+    this.corOlhos = value;
   }
 
   /**
@@ -354,6 +398,8 @@ public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordB
     private java.lang.String altura;
     private java.lang.String peso;
     private java.lang.String corCabelo;
+    private java.lang.String corPele;
+    private java.lang.String corOlhos;
     private java.lang.String anoNascimento;
     private java.lang.String genero;
     private java.lang.String urlImagem;
@@ -390,21 +436,29 @@ public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordB
         this.corCabelo = data().deepCopy(fields()[4].schema(), other.corCabelo);
         fieldSetFlags()[4] = other.fieldSetFlags()[4];
       }
-      if (isValidValue(fields()[5], other.anoNascimento)) {
-        this.anoNascimento = data().deepCopy(fields()[5].schema(), other.anoNascimento);
+      if (isValidValue(fields()[5], other.corPele)) {
+        this.corPele = data().deepCopy(fields()[5].schema(), other.corPele);
         fieldSetFlags()[5] = other.fieldSetFlags()[5];
       }
-      if (isValidValue(fields()[6], other.genero)) {
-        this.genero = data().deepCopy(fields()[6].schema(), other.genero);
+      if (isValidValue(fields()[6], other.corOlhos)) {
+        this.corOlhos = data().deepCopy(fields()[6].schema(), other.corOlhos);
         fieldSetFlags()[6] = other.fieldSetFlags()[6];
       }
-      if (isValidValue(fields()[7], other.urlImagem)) {
-        this.urlImagem = data().deepCopy(fields()[7].schema(), other.urlImagem);
+      if (isValidValue(fields()[7], other.anoNascimento)) {
+        this.anoNascimento = data().deepCopy(fields()[7].schema(), other.anoNascimento);
         fieldSetFlags()[7] = other.fieldSetFlags()[7];
       }
-      if (isValidValue(fields()[8], other.comentario)) {
-        this.comentario = data().deepCopy(fields()[8].schema(), other.comentario);
+      if (isValidValue(fields()[8], other.genero)) {
+        this.genero = data().deepCopy(fields()[8].schema(), other.genero);
         fieldSetFlags()[8] = other.fieldSetFlags()[8];
+      }
+      if (isValidValue(fields()[9], other.urlImagem)) {
+        this.urlImagem = data().deepCopy(fields()[9].schema(), other.urlImagem);
+        fieldSetFlags()[9] = other.fieldSetFlags()[9];
+      }
+      if (isValidValue(fields()[10], other.comentario)) {
+        this.comentario = data().deepCopy(fields()[10].schema(), other.comentario);
+        fieldSetFlags()[10] = other.fieldSetFlags()[10];
       }
     }
 
@@ -434,21 +488,29 @@ public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordB
         this.corCabelo = data().deepCopy(fields()[4].schema(), other.corCabelo);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.anoNascimento)) {
-        this.anoNascimento = data().deepCopy(fields()[5].schema(), other.anoNascimento);
+      if (isValidValue(fields()[5], other.corPele)) {
+        this.corPele = data().deepCopy(fields()[5].schema(), other.corPele);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.genero)) {
-        this.genero = data().deepCopy(fields()[6].schema(), other.genero);
+      if (isValidValue(fields()[6], other.corOlhos)) {
+        this.corOlhos = data().deepCopy(fields()[6].schema(), other.corOlhos);
         fieldSetFlags()[6] = true;
       }
-      if (isValidValue(fields()[7], other.urlImagem)) {
-        this.urlImagem = data().deepCopy(fields()[7].schema(), other.urlImagem);
+      if (isValidValue(fields()[7], other.anoNascimento)) {
+        this.anoNascimento = data().deepCopy(fields()[7].schema(), other.anoNascimento);
         fieldSetFlags()[7] = true;
       }
-      if (isValidValue(fields()[8], other.comentario)) {
-        this.comentario = data().deepCopy(fields()[8].schema(), other.comentario);
+      if (isValidValue(fields()[8], other.genero)) {
+        this.genero = data().deepCopy(fields()[8].schema(), other.genero);
         fieldSetFlags()[8] = true;
+      }
+      if (isValidValue(fields()[9], other.urlImagem)) {
+        this.urlImagem = data().deepCopy(fields()[9].schema(), other.urlImagem);
+        fieldSetFlags()[9] = true;
+      }
+      if (isValidValue(fields()[10], other.comentario)) {
+        this.comentario = data().deepCopy(fields()[10].schema(), other.comentario);
+        fieldSetFlags()[10] = true;
       }
     }
 
@@ -652,6 +714,86 @@ public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordB
     }
 
     /**
+      * Gets the value of the 'corPele' field.
+      * @return The value.
+      */
+    public java.lang.String getCorPele() {
+      return corPele;
+    }
+
+
+    /**
+      * Sets the value of the 'corPele' field.
+      * @param value The value of 'corPele'.
+      * @return This builder.
+      */
+    public com.br.kafka.dto.avro.personagem.PersonagemStarWars.Builder setCorPele(java.lang.String value) {
+      validate(fields()[5], value);
+      this.corPele = value;
+      fieldSetFlags()[5] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'corPele' field has been set.
+      * @return True if the 'corPele' field has been set, false otherwise.
+      */
+    public boolean hasCorPele() {
+      return fieldSetFlags()[5];
+    }
+
+
+    /**
+      * Clears the value of the 'corPele' field.
+      * @return This builder.
+      */
+    public com.br.kafka.dto.avro.personagem.PersonagemStarWars.Builder clearCorPele() {
+      corPele = null;
+      fieldSetFlags()[5] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'corOlhos' field.
+      * @return The value.
+      */
+    public java.lang.String getCorOlhos() {
+      return corOlhos;
+    }
+
+
+    /**
+      * Sets the value of the 'corOlhos' field.
+      * @param value The value of 'corOlhos'.
+      * @return This builder.
+      */
+    public com.br.kafka.dto.avro.personagem.PersonagemStarWars.Builder setCorOlhos(java.lang.String value) {
+      validate(fields()[6], value);
+      this.corOlhos = value;
+      fieldSetFlags()[6] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'corOlhos' field has been set.
+      * @return True if the 'corOlhos' field has been set, false otherwise.
+      */
+    public boolean hasCorOlhos() {
+      return fieldSetFlags()[6];
+    }
+
+
+    /**
+      * Clears the value of the 'corOlhos' field.
+      * @return This builder.
+      */
+    public com.br.kafka.dto.avro.personagem.PersonagemStarWars.Builder clearCorOlhos() {
+      corOlhos = null;
+      fieldSetFlags()[6] = false;
+      return this;
+    }
+
+    /**
       * Gets the value of the 'anoNascimento' field.
       * @return The value.
       */
@@ -666,9 +808,9 @@ public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordB
       * @return This builder.
       */
     public com.br.kafka.dto.avro.personagem.PersonagemStarWars.Builder setAnoNascimento(java.lang.String value) {
-      validate(fields()[5], value);
+      validate(fields()[7], value);
       this.anoNascimento = value;
-      fieldSetFlags()[5] = true;
+      fieldSetFlags()[7] = true;
       return this;
     }
 
@@ -677,7 +819,7 @@ public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordB
       * @return True if the 'anoNascimento' field has been set, false otherwise.
       */
     public boolean hasAnoNascimento() {
-      return fieldSetFlags()[5];
+      return fieldSetFlags()[7];
     }
 
 
@@ -687,7 +829,7 @@ public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordB
       */
     public com.br.kafka.dto.avro.personagem.PersonagemStarWars.Builder clearAnoNascimento() {
       anoNascimento = null;
-      fieldSetFlags()[5] = false;
+      fieldSetFlags()[7] = false;
       return this;
     }
 
@@ -706,9 +848,9 @@ public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordB
       * @return This builder.
       */
     public com.br.kafka.dto.avro.personagem.PersonagemStarWars.Builder setGenero(java.lang.String value) {
-      validate(fields()[6], value);
+      validate(fields()[8], value);
       this.genero = value;
-      fieldSetFlags()[6] = true;
+      fieldSetFlags()[8] = true;
       return this;
     }
 
@@ -717,7 +859,7 @@ public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordB
       * @return True if the 'genero' field has been set, false otherwise.
       */
     public boolean hasGenero() {
-      return fieldSetFlags()[6];
+      return fieldSetFlags()[8];
     }
 
 
@@ -727,7 +869,7 @@ public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordB
       */
     public com.br.kafka.dto.avro.personagem.PersonagemStarWars.Builder clearGenero() {
       genero = null;
-      fieldSetFlags()[6] = false;
+      fieldSetFlags()[8] = false;
       return this;
     }
 
@@ -746,9 +888,9 @@ public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordB
       * @return This builder.
       */
     public com.br.kafka.dto.avro.personagem.PersonagemStarWars.Builder setUrlImagem(java.lang.String value) {
-      validate(fields()[7], value);
+      validate(fields()[9], value);
       this.urlImagem = value;
-      fieldSetFlags()[7] = true;
+      fieldSetFlags()[9] = true;
       return this;
     }
 
@@ -757,7 +899,7 @@ public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordB
       * @return True if the 'urlImagem' field has been set, false otherwise.
       */
     public boolean hasUrlImagem() {
-      return fieldSetFlags()[7];
+      return fieldSetFlags()[9];
     }
 
 
@@ -767,7 +909,7 @@ public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordB
       */
     public com.br.kafka.dto.avro.personagem.PersonagemStarWars.Builder clearUrlImagem() {
       urlImagem = null;
-      fieldSetFlags()[7] = false;
+      fieldSetFlags()[9] = false;
       return this;
     }
 
@@ -786,9 +928,9 @@ public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordB
       * @return This builder.
       */
     public com.br.kafka.dto.avro.personagem.PersonagemStarWars.Builder setComentario(java.lang.String value) {
-      validate(fields()[8], value);
+      validate(fields()[10], value);
       this.comentario = value;
-      fieldSetFlags()[8] = true;
+      fieldSetFlags()[10] = true;
       return this;
     }
 
@@ -797,7 +939,7 @@ public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordB
       * @return True if the 'comentario' field has been set, false otherwise.
       */
     public boolean hasComentario() {
-      return fieldSetFlags()[8];
+      return fieldSetFlags()[10];
     }
 
 
@@ -807,7 +949,7 @@ public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordB
       */
     public com.br.kafka.dto.avro.personagem.PersonagemStarWars.Builder clearComentario() {
       comentario = null;
-      fieldSetFlags()[8] = false;
+      fieldSetFlags()[10] = false;
       return this;
     }
 
@@ -821,10 +963,12 @@ public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordB
         record.altura = fieldSetFlags()[2] ? this.altura : (java.lang.String) defaultValue(fields()[2]);
         record.peso = fieldSetFlags()[3] ? this.peso : (java.lang.String) defaultValue(fields()[3]);
         record.corCabelo = fieldSetFlags()[4] ? this.corCabelo : (java.lang.String) defaultValue(fields()[4]);
-        record.anoNascimento = fieldSetFlags()[5] ? this.anoNascimento : (java.lang.String) defaultValue(fields()[5]);
-        record.genero = fieldSetFlags()[6] ? this.genero : (java.lang.String) defaultValue(fields()[6]);
-        record.urlImagem = fieldSetFlags()[7] ? this.urlImagem : (java.lang.String) defaultValue(fields()[7]);
-        record.comentario = fieldSetFlags()[8] ? this.comentario : (java.lang.String) defaultValue(fields()[8]);
+        record.corPele = fieldSetFlags()[5] ? this.corPele : (java.lang.String) defaultValue(fields()[5]);
+        record.corOlhos = fieldSetFlags()[6] ? this.corOlhos : (java.lang.String) defaultValue(fields()[6]);
+        record.anoNascimento = fieldSetFlags()[7] ? this.anoNascimento : (java.lang.String) defaultValue(fields()[7]);
+        record.genero = fieldSetFlags()[8] ? this.genero : (java.lang.String) defaultValue(fields()[8]);
+        record.urlImagem = fieldSetFlags()[9] ? this.urlImagem : (java.lang.String) defaultValue(fields()[9]);
+        record.comentario = fieldSetFlags()[10] ? this.comentario : (java.lang.String) defaultValue(fields()[10]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -883,6 +1027,22 @@ public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordB
     } else {
       out.writeIndex(1);
       out.writeString(this.corCabelo);
+    }
+
+    if (this.corPele == null) {
+      out.writeIndex(0);
+      out.writeNull();
+    } else {
+      out.writeIndex(1);
+      out.writeString(this.corPele);
+    }
+
+    if (this.corOlhos == null) {
+      out.writeIndex(0);
+      out.writeNull();
+    } else {
+      out.writeIndex(1);
+      out.writeString(this.corOlhos);
     }
 
     if (this.anoNascimento == null) {
@@ -951,6 +1111,20 @@ public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordB
 
       if (in.readIndex() != 1) {
         in.readNull();
+        this.corPele = null;
+      } else {
+        this.corPele = in.readString();
+      }
+
+      if (in.readIndex() != 1) {
+        in.readNull();
+        this.corOlhos = null;
+      } else {
+        this.corOlhos = in.readString();
+      }
+
+      if (in.readIndex() != 1) {
+        in.readNull();
         this.anoNascimento = null;
       } else {
         this.anoNascimento = in.readString();
@@ -978,7 +1152,7 @@ public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordB
       }
 
     } else {
-      for (int i = 0; i < 9; i++) {
+      for (int i = 0; i < 11; i++) {
         switch (fieldOrder[i].pos()) {
         case 0:
           this.id = in.readInt();
@@ -1018,13 +1192,31 @@ public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordB
         case 5:
           if (in.readIndex() != 1) {
             in.readNull();
+            this.corPele = null;
+          } else {
+            this.corPele = in.readString();
+          }
+          break;
+
+        case 6:
+          if (in.readIndex() != 1) {
+            in.readNull();
+            this.corOlhos = null;
+          } else {
+            this.corOlhos = in.readString();
+          }
+          break;
+
+        case 7:
+          if (in.readIndex() != 1) {
+            in.readNull();
             this.anoNascimento = null;
           } else {
             this.anoNascimento = in.readString();
           }
           break;
 
-        case 6:
+        case 8:
           if (in.readIndex() != 1) {
             in.readNull();
             this.genero = null;
@@ -1033,7 +1225,7 @@ public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordB
           }
           break;
 
-        case 7:
+        case 9:
           if (in.readIndex() != 1) {
             in.readNull();
             this.urlImagem = null;
@@ -1042,7 +1234,7 @@ public class PersonagemStarWars extends org.apache.avro.specific.SpecificRecordB
           }
           break;
 
-        case 8:
+        case 10:
           if (in.readIndex() != 1) {
             in.readNull();
             this.comentario = null;

@@ -1,9 +1,10 @@
-package com.br.kafka.dto.swapi;
+package com.br.kafka.dto.personagem;
 
 import lombok.Builder;
 
 @Builder
-public record PersonagemDTO(
+public record PersonagemCompletoDTO(
+        int id,
         String nome,
         String altura,
         String peso,
@@ -12,6 +13,7 @@ public record PersonagemDTO(
         String genero,
         String corPele,
         String corOlhos,
-        String url
+        String urlImagem
 ) {
+
 }

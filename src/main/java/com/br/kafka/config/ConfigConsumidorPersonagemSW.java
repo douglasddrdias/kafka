@@ -14,8 +14,11 @@ import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.br.kafka.ConstantesKafka.SCHEMA_REGISTRY_URL;
+import static com.br.kafka.ConstantesKafka.SPECIFIC_AVRO_READER;
+
 @Configuration
-public class ConfigConsumudorKafka {
+public class ConfigConsumidorPersonagemSW {
     @Value("${spring.kafka.bootstrap-servers}")
     private String bootstrapServers;
 
@@ -31,12 +34,9 @@ public class ConfigConsumudorKafka {
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, IntegerDeserializer.class);
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, KafkaAvroDeserializer.class);
-        props.put("schema.registry.url", schemaRegistryUrl);
-        props.put("specific.avro.reader", true);
+        props.put(SCHEMA_REGISTRY_URL, schemaRegistryUrl);
+        props.put(SPECIFIC_AVRO_READER, true);
         props.put(ConsumerConfig.GROUP_ID_CONFIG, groupId);
-        props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
-
-
         return new DefaultKafkaConsumerFactory<>(props);
     }
 

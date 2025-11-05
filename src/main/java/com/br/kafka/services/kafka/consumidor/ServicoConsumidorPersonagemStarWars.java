@@ -17,7 +17,7 @@ public class ServicoConsumidorPersonagemStarWars {
     public static final String IMAGEM = "Imagem: {}";
     public static final String COMENTARIO = "Comentário: \"{}\" ";
 
-    @KafkaListener(topics = "${starwars.topic}", groupId = "${spring.kafka.consumer.group-id}", properties = {"auto.offset.reset=earliest"})
+    @KafkaListener(topics = "${starwars.topic}", groupId = "${spring.kafka.consumer.group-id}")
     public void consume(PersonagemStarWars personagem, @Header(KafkaHeaders.OFFSET) long offset) {
         log.debug("Consumindo offset: {}", offset);
         log.debug(MENSAGEM_AVRO_RECEBIDA);
@@ -27,4 +27,5 @@ public class ServicoConsumidorPersonagemStarWars {
         log.debug(IMAGEM, personagem.getUrlImagem());
         log.debug(COMENTARIO, personagem.getComentario());
     }
+
 }

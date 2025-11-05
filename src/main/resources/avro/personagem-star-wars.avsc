@@ -27,6 +27,16 @@
       "default": null
     },
     {
+      "name": "corPele",
+      "type": ["null", "string"],
+      "default": null
+    },
+    {
+      "name": "corOlhos",
+      "type": ["null", "string"],
+      "default": null
+    },
+    {
       "name": "anoNascimento",
       "type": ["null", "string"],
       "default": null
