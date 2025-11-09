@@ -3,7 +3,7 @@ package com.br.kafka.dto.swapi;
 import lombok.Builder;
 
 @Builder
-public record PersonagemDTO(
+public record TraducaoPersonagemDTO(
         String nome,
         String altura,
         String peso,

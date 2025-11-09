@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class ServicoConsumidorPersonagemStarWars {
+public class ServicoConsumidorPersonagemSW {
     public static final String MENSAGEM_AVRO_RECEBIDA = "📩 Mensagem Avro recebida!";
     public static final String NOME = "Nome: {}";
     public static final String ALTURA = "Altura: {}";

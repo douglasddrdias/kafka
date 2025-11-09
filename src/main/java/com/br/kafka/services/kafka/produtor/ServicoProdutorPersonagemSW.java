@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class ServicoProdutorPersonagemStarWars {
+public class ServicoProdutorPersonagemSW {
     public static final String ENVIANDO_PERSONAGEM = "Enviando personagem: {}";
     public static final String MSG_PUBLICADA_SUCESSO = "Mensagem Avro publicada com sucesso! Offset: {} | Partition: {}";
     public static final String MSG_ERRO_PUBLICAR = "Erro ao publicar mensagem Avro: --{}";

@@ -2,7 +2,7 @@ package com.br.kafka.services.esterno;
 
 import com.br.kafka.dto.esterno.swapi.PaginaSwapiResponse;
 import com.br.kafka.dto.esterno.swapi.SwapiResponse;
-import com.br.kafka.dto.swapi.PersonagemDTO;
+import com.br.kafka.dto.swapi.TraducaoPersonagemDTO;
 import com.br.kafka.services.ServicoTraducaoSwApi;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,7 +19,7 @@ public class ServicoSwapi {
     private String url;
     private final ServicoTraducaoSwApi servicoTraducao;
 
-    public PersonagemDTO recuperarPersonagem(int id) {
+    public TraducaoPersonagemDTO recuperarPersonagem(int id) {
         log.debug("Recuperando dados do personagem id: {}", id);
         var swapiData = restTemplate.getForObject(
                 url + id,

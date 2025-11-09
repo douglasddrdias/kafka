@@ -1,6 +1,6 @@
 package com.br.kafka.ctr;
 
-import com.br.kafka.dto.swapi.PersonagemDTO;
+import com.br.kafka.dto.swapi.TraducaoPersonagemDTO;
 import com.br.kafka.services.ServicoPersonagemSW;
 import com.br.kafka.services.esterno.ServicoSwapi;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +18,7 @@ public class CtrSwapi {
     private final ServicoPersonagemSW personagemSW;
 
     @GetMapping("{id}")
-    public ResponseEntity<PersonagemDTO> getCharacter(@PathVariable int id) {
+    public ResponseEntity<TraducaoPersonagemDTO> getCharacter(@PathVariable int id) {
         return ResponseEntity.ok(service.recuperarPersonagem(id));
     }
 

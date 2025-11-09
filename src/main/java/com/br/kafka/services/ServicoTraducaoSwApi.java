@@ -1,7 +1,7 @@
 package com.br.kafka.services;
 
 import com.br.kafka.dto.esterno.swapi.SwapiResponse;
-import com.br.kafka.dto.swapi.PersonagemDTO;
+import com.br.kafka.dto.swapi.TraducaoPersonagemDTO;
 import com.br.kafka.enums.GeneroEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -123,9 +123,9 @@ public class ServicoTraducaoSwApi {
         return coresPele;
     }
 
-    public PersonagemDTO traduzir(SwapiResponse dados) {
+    public TraducaoPersonagemDTO traduzir(SwapiResponse dados) {
         if (dados != null) {
-            var b = PersonagemDTO.builder();
+            var b = TraducaoPersonagemDTO.builder();
             b.nome(dados.name());
             b.altura(dados.height());
             b.peso(dados.mass());
