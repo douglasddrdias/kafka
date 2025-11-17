@@ -47,3 +47,5 @@ logging:
 #      apache:
 #        kafka:
 #          streams: DEBUG
+cors:
+  originPatterns: "http://localhost:8080,http://localhost:3000,http://localhost:8090,http://192.168.100.93:3000,https://www.erosmonitoramento.com.br,https://erosmonitoramento.com.br"
